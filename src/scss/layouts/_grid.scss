@@ -1,0 +1,44 @@
+@use "sass:math";
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as mix;
+
+.container {
+    width: 100%;
+    max-width: $container-max-width;
+    margin-inline: auto;
+    padding-inline: $container-padding;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-inline: math.div($container-padding, -1);
+}
+
+@for $i from 1 through 12 {
+    .col-#{$i} {
+        flex: 0 0 auto;
+        width: math.percentage(math.div($i, 12));
+        padding-inline: $container-padding;
+    }
+}
+
+// Респонсивные колонки
+@each $breakpoint,
+    $width
+        in (
+            "sm": $breakpoint-sm,
+            "md": $breakpoint-md,
+            "lg": $breakpoint-lg,
+            "xl": $breakpoint-xl
+        )
+{
+    @include mix.media-breakpoint-up($width) {
+        @for $i from 1 through 12 {
+            .col-#{$breakpoint}-#{$i} {
+                flex: 0 0 auto;
+                width: math.percentage(math.div($i, 12));
+            }
+        }
+    }
+}

@@ -1,0 +1,47 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as mix;
+@use "sass:color";
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    padding: $spacing-md 0;
+    box-shadow: $box-shadow;
+    z-index: $z-index-fixed;
+    &__inner {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        @media (max-width: 768px) {
+            justify-content: space-between;
+        }
+    }
+    &__container {
+        @include mix.flex-between;
+    }
+
+    &__nav {
+        @include mix.media-breakpoint-down($breakpoint-md) {
+            display: none;
+
+            &.active {
+                display: block;
+            }
+        }
+    }
+
+    &__menu {
+        &-toggle {
+            display: none;
+            cursor: pointer;
+            padding: $spacing-sm;
+
+            @include mix.media-breakpoint-down($breakpoint-md) {
+                display: block;
+            }
+        }
+    }
+}

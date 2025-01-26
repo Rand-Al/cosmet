@@ -1,0 +1,9 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as mix;
+@use "sass:color";
+
+.hero {
+    padding-top: 110px;
+    .container {
+    }
+}

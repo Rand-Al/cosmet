@@ -1,0 +1,76 @@
+// Импортируем модули Sass
+@use "sass:math";
+@use "sass:color";
+
+// Импортируем базовые стили и переменные
+@use "abstracts/variables" as *;
+@use "abstracts/mixins" as mix;
+
+// Импортируем компоненты
+@use "base/reset";
+@use "base/images";
+@use "base/typography";
+@use "components/buttons";
+@use "components/navigation";
+@use "components/forms";
+@use "layouts/header";
+@use "layouts/footer";
+@use "layouts/grid";
+@use "layouts/hero";
+
+// Глобальные утилиты
+.d-none {
+    display: none !important;
+}
+.d-block {
+    display: block !important;
+}
+.d-flex {
+    display: flex !important;
+}
+
+// Flex утилиты
+.flex-center {
+    @include mix.flex-center;
+}
+.flex-between {
+    @include mix.flex-between;
+}
+
+// Отступы
+.mt-1 {
+    margin-top: $spacing-sm !important;
+}
+.mt-2 {
+    margin-top: $spacing-md !important;
+}
+.mt-3 {
+    margin-top: $spacing-lg !important;
+}
+.mt-4 {
+    margin-top: $spacing-xl !important;
+}
+
+.mb-1 {
+    margin-bottom: $spacing-sm !important;
+}
+.mb-2 {
+    margin-bottom: $spacing-md !important;
+}
+.mb-3 {
+    margin-bottom: $spacing-lg !important;
+}
+.mb-4 {
+    margin-bottom: $spacing-xl !important;
+}
+
+// Выравнивание текста
+.text-center {
+    text-align: center !important;
+}
+.text-left {
+    text-align: left !important;
+}
+.text-right {
+    text-align: right !important;
+}

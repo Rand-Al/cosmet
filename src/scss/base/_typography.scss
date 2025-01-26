@@ -1,0 +1,36 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as mix;
+
+h1,
+.h1 {
+    font-size: 2.5rem;
+    margin-bottom: $spacing-lg;
+
+    @include mix.media-breakpoint-down($breakpoint-md) {
+        font-size: 2rem;
+    }
+}
+
+h2,
+.h2 {
+    font-size: 2rem;
+    margin-bottom: $spacing-md;
+
+    @include mix.media-breakpoint-down($breakpoint-md) {
+        font-size: 1.75rem;
+    }
+}
+
+h3,
+.h3 {
+    font-size: 1.75rem;
+    margin-bottom: $spacing-md;
+}
+
+p {
+    margin-bottom: $spacing-md;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}

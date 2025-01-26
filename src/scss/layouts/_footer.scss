@@ -1,0 +1,26 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as mix;
+@use "sass:color";
+
+.footer {
+    padding: $spacing-xl 0;
+    background-color: $light-color;
+
+    &__content {
+        @include mix.flex-between;
+        flex-wrap: wrap;
+        gap: $spacing-lg;
+    }
+
+    &__copyright {
+        color: $secondary-color;
+        text-align: center;
+        margin: 0;
+    }
+
+    &__bottom {
+        margin-top: $spacing-xl;
+        padding-top: $spacing-lg;
+        border-top: 1px solid color.change($dark-color, $alpha: 0.1);
+    }
+}
